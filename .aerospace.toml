@@ -1,0 +1,108 @@
+# ── Normalizations ─────────────────────────────
+enable-normalization-flatten-containers = true 
+enable-normalization-opposite-orientation-for-nested-containers = true 
+
+# Mouse follows focus when focused monitor changes
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+# ── Main Mode ─────────────────────────────────
+[mode.main.binding]
+
+# Focus (vim-style navigation: h/j/k/l)
+alt-h = 'focus --boundaries-action wrap-around-the-workspace left'
+alt-j = 'focus --boundaries-action wrap-around-the-workspace down'
+alt-k = 'focus --boundaries-action wrap-around-the-workspace up'
+alt-l = 'focus --boundaries-action wrap-around-the-workspace right'
+
+# Move windows (vim-style with shift)
+alt-shift-h = 'move left'
+alt-shift-j = 'move down'
+alt-shift-k = 'move up'
+alt-shift-l = 'move right'
+
+# Window management
+alt-shift-q = 'close'  # Standard quit window
+alt-f = 'fullscreen'
+alt-shift-space = 'layout floating tiling'
+
+# Split layouts (i3-style)
+alt-backslash = 'join-with down'    # horizontal split
+alt-minus = 'join-with right'       # vertical split
+
+# Layout modes (i3-inspired)
+alt-s = 'layout v_accordion'   # stacking
+alt-w = 'layout h_accordion'   # tabbed  
+alt-e = 'layout tiles horizontal vertical' # toggle tiling
+
+# Workspaces
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
+alt-0 = 'workspace 10'
+
+# Workspace navigation
+alt-tab = 'workspace-back-and-forth'  # Toggle between workspaces  
+alt-ctrl-h = 'workspace prev'         # Previous workspace
+alt-ctrl-l = 'workspace next'         # Next workspace
+
+# Move container to workspace
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-2 = 'move-node-to-workspace 2'
+alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-4 = 'move-node-to-workspace 4'
+alt-shift-5 = 'move-node-to-workspace 5'
+alt-shift-6 = 'move-node-to-workspace 6'
+alt-shift-7 = 'move-node-to-workspace 7'
+alt-shift-8 = 'move-node-to-workspace 8'
+alt-shift-9 = 'move-node-to-workspace 9'
+alt-shift-0 = 'move-node-to-workspace 10'
+
+# App shortcuts
+alt-enter = 'exec-and-forget open -a Terminal'  # Use 'enter' not 'return'
+alt-d = 'exec-and-forget open -a Raycast'       # App launcher (if you have Raycast)
+alt-b = 'exec-and-forget open -a Safari'        # Browser
+
+# System
+alt-shift-c = 'reload-config'
+alt-shift-r = 'mode resize'  # Enter resize mode
+
+# Focus management  
+alt-a = 'focus-back-and-forth'  # Focus last window
+
+# ── Resize Mode ──────────────────────────────
+[mode.resize.binding]
+# Vim-style resize keys
+h = 'resize width -50'
+j = 'resize height +50' 
+k = 'resize height -50'
+l = 'resize width +50'
+
+# Fine adjustments
+shift-h = 'resize width -10'
+shift-j = 'resize height +10'
+shift-k = 'resize height -10'
+shift-l = 'resize width +10'
+
+# Exit resize mode
+enter = 'mode main'
+esc = 'mode main'
+alt-shift-r = 'mode main'  # Same key to exit
+
+# ── Window Rules (optional) ──────────────────
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.ActivityMonitor' 
+run = 'layout floating'
