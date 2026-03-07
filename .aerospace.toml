@@ -8,6 +8,11 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # ── Main Mode ─────────────────────────────────
 [mode.main.binding]
 
+# alt-shift-right = 'move-node-to-monitor right'
+# alt-shift-left  = 'move-node-to-monitor left'
+alt-shift-right = 'move-workspace-to-monitor right'
+alt-shift-left = 'move-workspace-to-monitor left'
+
 # Focus (vim-style navigation: h/j/k/l)
 alt-h = 'focus --boundaries-action wrap-around-the-workspace left'
 alt-j = 'focus --boundaries-action wrap-around-the-workspace down'
@@ -64,7 +69,7 @@ alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-0 = 'move-node-to-workspace 10'
 
 # App shortcuts
-alt-enter = 'exec-and-forget open -a Terminal'  # Use 'enter' not 'return'
+# alt-~ = 'exec-and-forget open -a Terminal'  # Use 'enter' not 'return'
 alt-d = 'exec-and-forget open -a Raycast'       # App launcher (if you have Raycast)
 alt-b = 'exec-and-forget open -a Safari'        # Browser
 
